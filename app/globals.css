@@ -1,0 +1,35 @@
+:root {
+  --bg: #fbfaf7; --fg: #1d1b19; --muted: #6b655e; --accent: #b3261e; --line: #e6e1d9; --card: #ffffff;
+  color-scheme: light dark;
+}
+@media (prefers-color-scheme: dark) {
+  :root { --bg: #151312; --fg: #eeeae4; --muted: #a39b91; --accent: #ff6b5e; --line: #2d2926; --card: #1d1a18; }
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0; background: var(--bg); color: var(--fg);
+  font: 17px/1.65 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+header, main, footer { max-width: 46rem; margin: 0 auto; padding-inline: 1.25rem; }
+header { display: flex; flex-wrap: wrap; gap: .5rem 1.5rem; align-items: baseline; justify-content: space-between;
+  padding-block: 1.5rem 1rem; border-bottom: 1px solid var(--line); }
+nav { display: flex; flex-wrap: wrap; gap: .25rem 1rem; font-size: .95rem; }
+a { color: var(--accent); }
+nav a { color: var(--muted); text-decoration: none; }
+nav a[aria-current="page"], nav a:hover { color: var(--fg); }
+nav .lang { border: 1px solid var(--line); border-radius: 999px; padding: 0 .6rem; }
+.brand { font-weight: 800; font-size: 1.25rem; color: var(--fg); text-decoration: none; letter-spacing: -.01em; }
+main { padding-block: 2rem 3rem; }
+h1 { font-size: 2rem; line-height: 1.2; margin: 0 0 .25rem; letter-spacing: -.02em; }
+h2 { font-size: 1.15rem; margin: 2rem 0 .5rem; }
+.updated { color: var(--muted); font-size: .9rem; margin: 0 0 1.5rem; }
+.pending { color: var(--muted); font-style: italic; }
+footer { display: flex; flex-wrap: wrap; gap: .5rem 1rem; justify-content: space-between; color: var(--muted);
+  font-size: .85rem; padding-block: 1.25rem 2rem; border-top: 1px solid var(--line); }
+.badge { border: 1px solid var(--line); border-radius: 999px; padding: 0 .6rem; }
+.choose { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr)); margin-top: 2rem; }
+.choose a { display: block; padding: 1.25rem; background: var(--card); border: 1px solid var(--line); border-radius: .75rem;
+  color: var(--fg); text-decoration: none; }
+.choose a:hover { border-color: var(--accent); }
+.choose strong { display: block; font-size: 1.2rem; }
+.choose span { color: var(--muted); font-size: .95rem; }

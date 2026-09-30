@@ -1,0 +1,47 @@
+# Compila el sitio estático en GitHub (no en la laptop) y lo publica en GitHub Pages.
+name: Publicar sitio
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      NEXT_TELEMETRY_DISABLED: "1"
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Instalar pnpm 12 (standalone)
+        run: |
+          curl -fsSL https://get.pnpm.io/install.sh | env PNPM_VERSION=12 sh -
+          echo "$HOME/.local/share/pnpm/bin" >> "$GITHUB_PATH"
+
+      # pnpm descarga Node según devEngines.runtime
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm build
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: out
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
