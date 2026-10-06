@@ -4,7 +4,7 @@ export const site = {
   channels: { es: "Drama Online ES", en: "Drama Online EN" },
   // Correo de contacto del proyecto. Vacío = se muestra "contacto próximamente".
   // Las revisiones de Google/TikTok/Meta EXIGEN un correo real antes de enviarlas.
-  contactEmail: "",
+  contactEmail: "fogatales@gmail.com",
   lastUpdated: "2026-09-29",
 } as const;
 

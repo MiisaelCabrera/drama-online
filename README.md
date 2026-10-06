@@ -18,5 +18,5 @@ pnpm install && pnpm build   # genera out/ con basePath /drama-online
 ```
 
 ## Antes de enviar a revisión
-- [ ] Correo del proyecto en `contactEmail`
+- [x] Correo del proyecto en `contactEmail` (fogatales@gmail.com)
 - [ ] Dominio propio (Google pide verificarlo): cambiar `basePath` a `""` y configurar el dominio en Pages
