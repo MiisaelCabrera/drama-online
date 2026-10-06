@@ -1,4 +1,4 @@
-# Drama Online — sitio web
+# Fogatales — sitio web (repo drama-online)
 
 Sitio estático (Next.js, `output: "export"`) con inicio, política de privacidad, términos y borrado de datos,
 en español e inglés. Lo exigen las revisiones de apps de Google (YouTube), TikTok y Meta.

@@ -1,7 +1,7 @@
 // Datos del proyecto en un solo lugar. Cambia aquí y haz push: GitHub Actions republica el sitio.
 export const site = {
-  name: "Drama Online",
-  channels: { es: "Drama Online ES", en: "Drama Online EN" },
+  name: "Fogatales",
+  channels: { es: "Fogatales ES (@fogatales_es)", en: "Fogatales EN (@fogatales_en)" },
   // Correo de contacto del proyecto. Vacío = se muestra "contacto próximamente".
   // Las revisiones de Google/TikTok/Meta EXIGEN un correo real antes de enviarlas.
   contactEmail: "fogatales@gmail.com",
